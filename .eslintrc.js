@@ -5,17 +5,6 @@ module.exports = {
         jest: true,
     },
     extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
-    overrides: [
-        {
-            env: {
-                node: true,
-            },
-            files: [".eslintrc.{js,cjs}"],
-            parserOptions: {
-                sourceType: "script",
-            },
-        },
-    ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
@@ -41,6 +30,15 @@ module.exports = {
             fragment: "Fragment",
             version: "18.2.0",
             flowVersion: "0.53",
+        },
+    },
+    overrides: {
+        env: {
+            node: false,
+        },
+        files: ["**/src/**/*.test.{ts, tsx}"],
+        rules: {
+            "i18next/no-literal-string": "off",
         },
     },
 };

@@ -8,6 +8,11 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
         use: "ts-loader",
         exclude: /node_modules/,
     };
+    const babelLoader = {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+    };
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -38,5 +43,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
             },
         ],
     };
-    return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 };
