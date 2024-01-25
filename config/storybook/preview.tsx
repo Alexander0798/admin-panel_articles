@@ -21,11 +21,11 @@ const preview: Preview = {
                 dark: "app dark",
             },
             defaultTheme: "light",
-            parentSelector: ".app",
+            parentSelector: "#appComponent",
         }),
         (Story) => (
             <BrowserRouter>
-                <div className="app">
+                <div id="appComponent">
                     <Story />
                 </div>
             </BrowserRouter>
