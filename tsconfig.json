@@ -13,15 +13,11 @@
         "baseUrl": ".",
         "paths": {
             "*": ["./src/*"]
-        },
-       
+        }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    },
-    // "include": [
-    //     "./config/jest/setupTest.ts"
-    //   ],
+    }
 }
