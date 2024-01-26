@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy: 
           matrix: 
-            node-version: [21.x]
+            node-version: [21.6.1]
         steps:
             - uses: actions/checkoout@v2
             - name: Starting Node.js ${{matrix.node-version}}
