@@ -4,12 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "plugin:storybook/recommended"
-    ],
+    extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:storybook/recommended"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaVersion: "latest",
@@ -23,7 +18,7 @@ module.exports = {
         "react/jsx-indent": [2, 4],
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/ban-ts-comment": "off",
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"],
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": "warn",
         "i18next/no-literal-string": ["error", { markupOnly: true }],
