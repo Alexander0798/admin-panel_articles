@@ -3,7 +3,7 @@
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
-    transition: width linear .3s;
+    transition: width linear 0.3s;
 }
 
 .collapsed {
@@ -23,4 +23,10 @@
 .column {
     flex-direction: column;
     gap: 10px 0;
+}
+
+.collapseBtn {
+    position: absolute;
+    right: -40px;
+    bottom: 40px;
 }
