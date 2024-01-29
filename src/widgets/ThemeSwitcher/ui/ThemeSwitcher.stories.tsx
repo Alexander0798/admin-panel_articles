@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Lith: Story = {
+export const Light: Story = {
     args: {},
 };
 export const Dark: Story = {

@@ -2,7 +2,6 @@ import { FC, ReactNode, useState, useRef, useCallback, useEffect } from "react";
 import cls from "./Modal.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
-
 interface Props {
     className?: string;
     children: ReactNode;
@@ -55,13 +54,12 @@ export const Modal: FC<Props> = (props: Props) => {
         [cls.isClosing]: isClosing,
     };
 
-    
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
-                        {children} 
+                        {children}
                     </div>
                 </div>
             </div>

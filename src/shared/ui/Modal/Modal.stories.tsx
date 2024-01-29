@@ -19,7 +19,7 @@ export const Light: Story = {
         children: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem perspiciatis",
     },
 };
-
+Light.decorators = [ThemeDecorator(Theme.LIGHT)];
 export const Dark: Story = {
     args: {
         isOpen: true,
