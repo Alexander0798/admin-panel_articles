@@ -1,6 +1,5 @@
 import type { Preview } from "@storybook/react";
 import "../../src/app/styles/index.scss";
-import { ThemeProvider } from "../../src/app/providers/ThemeProvider";
 import { withThemeByClassName } from "@storybook/addon-themes";
 import { ReactRenderer } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";

@@ -19,7 +19,10 @@ const config: Config = {
     setupFilesAfterEnv: ["<rootDir>config/jest/setupTest.ts"],
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
-        "\\.svg": ["<rootDir>config/jest/jestEmptyComponent.tsx"]
+        "\\.svg": ["<rootDir>config/jest/jestEmptyComponent.tsx"],
+    },
+    globals: {
+        __IS_DEV__: true,
     },
     // transform: {
     //     "^.+\\.(ts|tsx)?$": "ts-jest",
