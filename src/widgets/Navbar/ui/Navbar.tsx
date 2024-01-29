@@ -1,20 +1,29 @@
-import { FC } from "react";
+import { FC, useCallback, useState } from "react";
 import cls from "./Navbar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { useTranslation } from "react-i18next";
+import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { Modal } from "shared/ui/Modal/Modal";
 
 interface Props {
     className?: string;
 }
 
 export const Navbar: FC<Props> = ({ className }: Props) => {
+    const [isAuthModal, setIsAuthModal] = useState(false);
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal((prev) => !prev);
+    }, []);
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={classNames(cls.links)}>
-                /
-            </div>
+            <Button theme={ThemeButton.CLEAR_INVERTED} onClick={onToggleModal}>
+                {t("Войти")}
+            </Button>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                Эафывафыв
+            </Modal>
         </div>
     );
 };

@@ -19,10 +19,16 @@ export const Primary: Story = {
     },
 };
 
-export const Secondary: Story = {
+export const Clear: Story = {
     args: {
         children: "Text",
         theme: ThemeButton.CLEAR,
+    },
+};
+export const ClearInverted: Story = {
+    args: {
+        children: "Text",
+        theme: ThemeButton.CLEAR_INVERTED,
     },
 };
 
@@ -36,14 +42,14 @@ export const OutlineSizeL: Story = {
     args: {
         children: "Text",
         theme: ThemeButton.OUTLINE,
-        size: ButtonSize.L
+        size: ButtonSize.L,
     },
 };
 export const OutlineSizeXL: Story = {
     args: {
         children: "Text",
         theme: ThemeButton.OUTLINE,
-        size: ButtonSize.XL
+        size: ButtonSize.XL,
     },
 };
 export const OutlineDark: Story = {
