@@ -14,21 +14,21 @@ const preview: Preview = {
         },
     },
     decorators: [
-        withThemeByClassName<ReactRenderer>({
-            themes: {
-                light: "app_light_theme",
-                dark: "app_dark_theme",
-            },
-            defaultTheme: "light",
-            parentSelector: "#appComponent",
-        }),
         (Story) => (
             <BrowserRouter>
-                <div id="appComponent">
+                <div id="app">
                     <Story />
                 </div>
             </BrowserRouter>
         ),
+        withThemeByClassName<ReactRenderer>({
+            themes: {
+                light: "app app_light_theme",
+                dark: "app app_dark_theme",
+            },
+            defaultTheme: "light",
+            parentSelector: "body",
+        }),
     ],
 };
 
