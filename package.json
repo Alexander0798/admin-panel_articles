@@ -86,7 +86,7 @@
         "loki": "^0.34.0",
         "mini-css-extract-plugin": "^2.7.7",
         "react-test-renderer": "^18.2.0",
-        "reg-cli": "^0.17.7",
+        "reg-cli": "^0.18.0",
         "sass": "^1.70.0",
         "sass-loader": "^14.0.0",
         "storybook": "^7.6.10",
@@ -103,6 +103,7 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.1.0",
+        "axios": "^1.6.7",
         "i18next": "^23.7.18",
         "i18next-browser-languagedetector": "^7.2.0",
         "i18next-http-backend": "^2.4.2",

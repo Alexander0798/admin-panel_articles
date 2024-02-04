@@ -8,4 +8,14 @@
 .loginBtn {
     margin-top: 5px;
     margin-left: auto;
+    flex-grow: 0;
+    text-wrap: nowrap;
+}
+
+.wrapperBtn {
+    display: flex;
+}
+
+.error {
+    margin-right: 20px;
 }

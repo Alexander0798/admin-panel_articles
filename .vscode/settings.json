@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "fasdf"
-    ]
+    ],
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "liveServer.settings.CustomBrowser": "chrome"
 }

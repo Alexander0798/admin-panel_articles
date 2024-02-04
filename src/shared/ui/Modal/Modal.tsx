@@ -44,7 +44,7 @@ export const Modal: FC<Props> = (props: Props) => {
                 closeHandler();
             }
         },
-        [closeHandler]
+        [closeHandler],
     );
 
     useEffect(() => {

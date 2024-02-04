@@ -27,7 +27,6 @@ const Input: FC<Props> = (props) => {
     const onChangeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(evt.target.value);
         setCaretPosition(evt.target.value.length);
-        console.log(caretPosition);
     };
 
     const onBlur = () => {
