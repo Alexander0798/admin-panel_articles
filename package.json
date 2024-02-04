@@ -21,7 +21,8 @@
         "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "storybook:build": "storybook build -c ./config/storybook",
-        "visual:report:json": "node scripts/generate-visual-json-report.js"
+        "visual:report:json": "node scripts/generate-visual-json-report.js",
+        "prepare": "husky install"
     },
     "repository": {
         "type": "git",
@@ -99,7 +100,8 @@
         "webpack": "^5.90.0",
         "webpack-bundle-analyzer": "^4.10.1",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1"
+        "webpack-dev-server": "^4.15.1",
+        "husky": "^8.0.0"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.1.0",
