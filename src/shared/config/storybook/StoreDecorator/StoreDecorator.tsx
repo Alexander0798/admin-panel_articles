@@ -1,12 +1,15 @@
+import { ReducersMapObject } from "@reduxjs/toolkit";
 import { Story } from "@storybook/react";
 import { StoreProvider } from "app/providers/StoreProvider";
 import { StateSchema } from "app/providers/StoreProvider/config/StateSchema";
+import { loginReducer } from "features/AuthByLogin/model/slice/loginSlice";
 
-// @ts-ignore
-const StoreDecorator = (state: Partial<StateSchema>) => {
+const defaultAsyncReducers: Partial<ReducersMapObject<StateSchema>> = {
+    loginForm: loginReducer,
+};
+const StoreDecorator = (state: Partial<StateSchema>, asyncReducers?: Partial<ReducersMapObject<StateSchema>>) => {
     const story = (Story: Story) => (
-        // @ts-ignore
-        <StoreProvider initialState={state}>
+        <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
             <Story />
         </StoreProvider>
     );

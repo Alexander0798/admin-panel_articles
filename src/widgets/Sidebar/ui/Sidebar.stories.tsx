@@ -6,7 +6,6 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta = {
     title: "widget/Sidebar",
     component: Sidebar,
-
     tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar>;
 

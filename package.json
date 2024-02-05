@@ -80,6 +80,7 @@
         "eslint-plugin-storybook": "^0.6.15",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.6.0",
+        "husky": "^8.0.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
@@ -100,8 +101,7 @@
         "webpack": "^5.90.0",
         "webpack-bundle-analyzer": "^4.10.1",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1",
-        "husky": "^8.0.0"
+        "webpack-dev-server": "^4.15.1"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^2.1.0",

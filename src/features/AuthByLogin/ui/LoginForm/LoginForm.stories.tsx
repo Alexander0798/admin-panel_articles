@@ -7,7 +7,8 @@ import { Theme } from "app/providers/ThemeProvider";
 const meta = {
     title: "features/LoginForm",
     component: LoginForm,
-    decorators: [StoreDecorator({ loginForm: { userName: "123", password: "1312312" } })],
+    decorators: [StoreDecorator({ loginForm: { username: "123", password: "1312312" } })],
+
     tags: ["autodocs"],
 } satisfies Meta<typeof LoginForm>;
 
@@ -18,10 +19,10 @@ export const Light: Story = {
     args: {},
 };
 
-export const Error: Story = {
+export const WithError: Story = {
     args: {},
 };
-Error.decorators = [StoreDecorator({ loginForm: { userName: "123", password: "1312312", error: "error" } })];
+WithError.decorators = [StoreDecorator({ loginForm: { username: "123", password: "1312312", error: "error" } })];
 
 export const Dark: Story = {
     args: {},
