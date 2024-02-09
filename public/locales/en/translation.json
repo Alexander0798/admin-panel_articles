@@ -3,10 +3,11 @@
     "Короткий Язык": "En",
     "Главная": "Main",
     "О сайте": "About",
+    "Профиль": "Profile",
     "Войти": "Login in",
+    "Выйти": "Logout",
     "Введите логин": "Enter the login",
     "Введите пароль": "Enter the password",
     "Форма Авторизации": "Authorization Form",
-    "Неправильный логин или пароль": "Wrong username or password",
-    "Выйти": "Exit"
+    "Неправильный логин или пароль": "Wrong username or password"
 }

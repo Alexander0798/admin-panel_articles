@@ -8,7 +8,14 @@
         { "id": "2", "text": "another comment about post 1", "postId": "1" }
     ],
     "profile": {
-        "name": "typicode"
+        "firstName": "Lex",
+        "lastName": "Pro",
+        "age": 29,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Taganrog",
+        "username": "admin",
+        "avatar": "https://lh3.googleusercontent.com/dzrjo0AOG9u4IWm3DafEnO63TVug12tXrzA46vrnLKBP3h5mL-ht4DAFsmBlXzmOeZz2sgb1srJNZDGC7RR_rhGt9M4W2xfE1kJvFQ=w1400-k"
     },
     "users": [
         {

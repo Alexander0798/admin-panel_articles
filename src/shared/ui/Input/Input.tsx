@@ -10,7 +10,7 @@ interface Props extends HTMLInputProps {
     autofocus?: boolean;
 }
 
-const Input: FC<Props> = (props) => {
+const InputComponent: FC<Props> = (props) => {
     const { className, value, onChange, type = "text", placeholder, autofocus, ...otherProps } = props;
 
     const ref = useRef<HTMLInputElement>(null);
@@ -60,4 +60,4 @@ const Input: FC<Props> = (props) => {
         </div>
     );
 };
-export default memo(Input);
+export const Input = memo(InputComponent);
