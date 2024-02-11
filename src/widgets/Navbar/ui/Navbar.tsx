@@ -4,9 +4,10 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { Portal } from "shared/ui/Portal/Portal";
-import { LoginModal } from "features/AuthByLogin";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "../../../entities/User";
+import { LoginModal } from "features/AuthByUsername";
 
 interface Props {
     className?: string;

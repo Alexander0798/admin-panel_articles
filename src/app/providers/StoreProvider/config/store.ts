@@ -1,22 +1,40 @@
-import { ReducersMapObject, configureStore } from "@reduxjs/toolkit";
-import { StateSchema } from "./StateSchema";
-import { userReducer } from "../../../../entities/User";
+import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
+import { $api } from "shared/api/api";
+import { CombinedState, Reducer } from "redux";
+import { rtkApi } from "shared/api/rtkApi";
+import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { createReducerManager } from "./reducerManager";
+import { userReducer } from "../../../../entities/User";
 
-export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
-    const rootReducers: ReducersMapObject<StateSchema> = { ...asyncReducers, user: userReducer };
+export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
+    const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
+        user: userReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
+    };
 
     const reducerManager = createReducerManager(rootReducers);
 
-    const store = configureStore<StateSchema>({
-        reducer: reducerManager.reduce,
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+    };
+
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore
     store.reducerManager = reducerManager;
+
     return store;
-};
+}
 
 export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

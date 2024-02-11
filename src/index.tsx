@@ -8,18 +8,18 @@ import { ErrorBoundary } from "app/providers/ErrorBoudary";
 import { StoreProvider } from "app/providers/StoreProvider";
 
 const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const root = createRoot(rootElement!);
 
 root.render(
     <StrictMode>
-        <StoreProvider>
-            <BrowserRouter>
+        <BrowserRouter>
+            <StoreProvider>
                 <ErrorBoundary>
                     <ThemeProvider>
                         <App />
                     </ThemeProvider>
                 </ErrorBoundary>
-            </BrowserRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </BrowserRouter>
     </StrictMode>
 );

@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState, useRef, useCallback, useEffect } from "react";
 import cls from "./Modal.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { Mods, classNames } from "shared/lib/classNames/classNames";
 interface Props {
     className?: string;
     children: ReactNode;
@@ -44,7 +44,7 @@ export const Modal: FC<Props> = (props: Props) => {
                 closeHandler();
             }
         },
-        [closeHandler],
+        [closeHandler]
     );
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export const Modal: FC<Props> = (props: Props) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
