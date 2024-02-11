@@ -1,27 +1,43 @@
 {
-    "posts": [
-        { "id": "1", "title": "a title", "views": 100 },
-        { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-        { "id": "1", "text": "a comment about post 1", "postId": "1" },
-        { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-        "firstName": "Lex",
-        "lastName": "Pro",
-        "age": 29,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Taganrog",
-        "username": "admin",
-        "avatar": "https://lh3.googleusercontent.com/dzrjo0AOG9u4IWm3DafEnO63TVug12tXrzA46vrnLKBP3h5mL-ht4DAFsmBlXzmOeZz2sgb1srJNZDGC7RR_rhGt9M4W2xfE1kJvFQ=w1400-k"
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
     },
-    "users": [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "123"
-        }
-    ]
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "firstName": "Lex",
+    "lastName": "Profi",
+    "age": 29,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Taganrog",
+    "username": "admin",
+    "avatar": "https://lh3.googleusercontent.com/dzrjo0AOG9u4IWm3DafEnO63TVug12tXrzA46vrnLKBP3h5mL-ht4DAFsmBlXzmOeZz2sgb1srJNZDGC7RR_rhGt9M4W2xfE1kJvFQ=w1400-k"
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ]
 }

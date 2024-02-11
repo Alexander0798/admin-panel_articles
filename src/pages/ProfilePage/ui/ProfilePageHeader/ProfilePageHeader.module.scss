@@ -1,0 +1,14 @@
+.ProfilePageHeader {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.editBtn,
+.wrapperBtn {
+    margin-left: auto;
+}
+
+.wrapperBtn {
+    display: flex;
+    gap: 0 10px;
+}

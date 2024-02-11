@@ -37,6 +37,12 @@
     border: none;
 }
 
+.outlineRed {
+    border: 1px solid var(--red-light);
+    background: transparent;
+    color: var(--red-light);
+}
+
 .size_m {
     font: var(--font-m);
 }

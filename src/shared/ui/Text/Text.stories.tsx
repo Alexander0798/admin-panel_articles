@@ -2,12 +2,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 import { Theme } from "app/providers/ThemeProvider";
-import { Text, ThemeText } from "./Text";
+import { Align, Text, ThemeText } from "./Text";
 
 const meta = {
     title: "shared/Text",
     component: Text,
-
     tags: ["autodocs"],
 } satisfies Meta<typeof Text>;
 
@@ -35,7 +34,20 @@ export const Error: Story = {
         theme: ThemeText.ERROR,
     },
 };
-
+export const Right: Story = {
+    args: {
+        title: "Lorem",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem perspiciatis",
+        align: Align.RIGHT,
+    },
+};
+export const Center: Story = {
+    args: {
+        title: "Lorem",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem perspiciatis",
+        align: Align.CENTER,
+    },
+};
 export const OnlyTitle: Story = {
     args: {
         title: "Lorem",

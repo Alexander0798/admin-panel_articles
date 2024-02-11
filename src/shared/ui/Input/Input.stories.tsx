@@ -19,3 +19,10 @@ export const Normal: Story = {
         value: "txeT tseT",
     },
 };
+export const Readonly: Story = {
+    args: {
+        placeholder: "Test Text",
+        value: "txeT tseT",
+        readonly: true,
+    },
+};

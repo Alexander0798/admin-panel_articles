@@ -1,6 +1,13 @@
 {
     "Профиль": "Profile",
     "Редактировать": "Edit",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
     "Ваше имя": "Your name",
-    "Ваша фамилия": "Your last name"
+    "Ваша фамилия": "Your last name",
+    "Ваш возрост": "Your age",
+    "Ваша страна": "Your country",
+    "Ваша город": "Your city",
+    "Ваша валюта": "Your currency",
+    "Ваш аватар": "Your avatar"
 }
