@@ -16,7 +16,7 @@ export const Sidebar: FC<Props> = ({ className }: Props) => {
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-    const itemsList = useMemo(() => SidebarItemsList.map((item) => <SidebarItem item={item} key={item.path} collapsed={collapsed} />), [collapsed]);
+    const itemsList = useMemo(() => SidebarItemsList.map((item) => <SidebarItem item={item} key={item.path} collapsed={collapsed}/>), [collapsed]);
     return (
         <div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
             <Button data-testid="sidebar-toggle" size={ButtonSize.L} square={true} className={cls.collapseBtn} theme={ThemeButton.BACKGROUND_INVERTED} onClick={onToggle}>

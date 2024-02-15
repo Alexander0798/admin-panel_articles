@@ -1,11 +1,16 @@
 .ProfileCard {
     padding: 20px;
-    border: 1px solid var(--inverted-bg-color);
+    border: 2px solid var(--inverted-bg-color);
 }
 
 .data {
     display: flex;
     flex-direction: column;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .loading,
@@ -14,4 +19,8 @@
     align-items: center;
     justify-content: center;
     min-height: 400px;
+}
+
+.editing {
+    border-color: var(--inverted-primary-color);
 }

@@ -4,20 +4,20 @@ import { classNames } from "shared/lib/classNames/classNames";
 import {
     ProfileCard,
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileIsLoading,
     profileActions,
     profileReducer,
 } from "../../../../entities/Profile";
 import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useTranslation } from "react-i18next";
+
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { ProfilePageHeader } from "../ProfilePageHeader/ProfilePageHeader";
 import { getProfileReadonly } from "../../../../entities/Profile/model/selectors/getProfileReadonly";
 import { getProfileForm } from "../../../../entities/Profile/model/selectors/getProfileForm/getProfileForm";
-import { Country, Currency } from "shared/const/common";
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 
 const reducers = {
     profile: profileReducer,
@@ -27,7 +27,7 @@ interface Props {
 }
 
 const ProfilePage: FC<Props> = ({ className }: Props) => {
-    const { t } = useTranslation();
+
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
@@ -56,8 +56,8 @@ const ProfilePage: FC<Props> = ({ className }: Props) => {
         [dispatch]
     );
     const onChangeCountry = useCallback(
-        (value?: string) => {
-            dispatch(profileActions.updateProfile({ country: value as Country }));
+        (country?: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
         },
         [dispatch]
     );
@@ -68,8 +68,8 @@ const ProfilePage: FC<Props> = ({ className }: Props) => {
         [dispatch]
     );
     const onChangeCurrency = useCallback(
-        (value?: string) => {
-            dispatch(profileActions.updateProfile({ currency: value as Currency }));
+        (currency?: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
         },
         [dispatch]
     );

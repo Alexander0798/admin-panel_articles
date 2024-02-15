@@ -14,7 +14,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        size: 150,
+        size: 200,
+        src: AvatarImg,
+    },
+};
+export const Small: Story = {
+    args: {
+        size: 50,
         src: AvatarImg,
     },
 };
