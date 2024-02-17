@@ -8,7 +8,7 @@ interface Props {
     className?: string;
 }
 
-const ThemeSwitcher: FC<Props> = ({ className }: Props) => {
+const ThemeSwitcherComponent: FC<Props> = ({ className }: Props) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <Button theme={ThemeButton.CLEAR} onClick={toggleTheme} className={classNames("", {}, [className])}>
@@ -16,4 +16,4 @@ const ThemeSwitcher: FC<Props> = ({ className }: Props) => {
         </Button>
     );
 };
-export default memo(ThemeSwitcher);
+export const ThemeSwitcher = memo(ThemeSwitcherComponent);

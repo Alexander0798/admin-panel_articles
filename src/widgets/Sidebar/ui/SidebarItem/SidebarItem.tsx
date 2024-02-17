@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import cls from "./SidebarItem.module.scss";
 import { SidebarItemsType } from "widgets/Sidebar/model/items";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
@@ -12,7 +12,7 @@ interface Props {
     collapsed: boolean;
 }
 
-export const SidebarItem: FC<Props> = ({ item, collapsed }) => {
+const SidebarItemComponent: FC<Props> = ({ item, collapsed }) => {
     const { t } = useTranslation();
     const isAuth = useSelector(getUserAuthData);
 
@@ -26,3 +26,4 @@ export const SidebarItem: FC<Props> = ({ item, collapsed }) => {
         </AppLink>
     );
 };
+export const SidebarItem = memo(SidebarItemComponent);

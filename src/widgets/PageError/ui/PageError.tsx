@@ -2,11 +2,12 @@ import cls from "./PageError.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { memo } from "react";
 
 const reloadPage = () => {
     location.reload();
 };
-export const PageError = () => {
+const PageErrorComponent = () => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.PageError, {}, [])}>
@@ -17,3 +18,5 @@ export const PageError = () => {
         </div>
     );
 };
+
+export const PageError = memo(PageErrorComponent);
