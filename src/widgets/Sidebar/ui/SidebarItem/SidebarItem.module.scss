@@ -8,6 +8,14 @@
     fill: var(--inverted-primary-color);
 }
 
+.iconWrapper {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .link {
     text-wrap: nowrap;
     transition: 0.3s linear opacity;

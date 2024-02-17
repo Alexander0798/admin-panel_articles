@@ -21,7 +21,9 @@ const SidebarItemComponent: FC<Props> = ({ item, collapsed }) => {
     }
     return (
         <AppLink theme={AppLinkTheme.SECONDARY} to={item.path} className={classNames(cls.item, { [cls.collapsed]: collapsed })}>
-            <item.Icon className={cls.icon} />
+            <div className={cls.iconWrapper}>
+                <item.Icon className={cls.icon} />
+            </div>
             <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
     );

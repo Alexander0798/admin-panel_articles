@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import cls from "./ProfilePageHeader.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text } from "shared/ui/Text/Text";
@@ -13,7 +13,7 @@ interface Props {
     className?: string;
 }
 
-export const ProfilePageHeader: FC<Props> = ({ className }) => {
+const ProfilePageHeaderComponent: FC<Props> = ({ className }) => {
     const { t } = useTranslation("profile");
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
@@ -49,3 +49,4 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
         </div>
     );
 };
+export const ProfilePageHeader = memo(ProfilePageHeaderComponent);

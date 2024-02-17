@@ -8,6 +8,6 @@ interface Props {
 }
 
 export const NotFoundPage: FC<Props> = ({ className }: Props) => {
-    const { t } = useTranslation("notFoundPage");
+    const { t } = useTranslation("notFound");
     return <div className={classNames(cls.NotFoundPage, {}, [className])}>{t("Страница не найдена")}</div>;
 };

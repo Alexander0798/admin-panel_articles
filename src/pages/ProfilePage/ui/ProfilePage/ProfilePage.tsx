@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC, memo, useCallback, useEffect } from "react";
 import cls from "./ProfilePage.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -117,4 +117,4 @@ const ProfilePage: FC<Props> = ({ className }: Props) => {
         </DynamicModuleLoader>
     );
 };
-export default ProfilePage;
+export default memo(ProfilePage);
