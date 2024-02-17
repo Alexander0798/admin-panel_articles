@@ -1,6 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-import { USER_LOCALSTORAGE_KEY } from "shared/const/localsorage";
 import { ArticleDetailsSchema } from "../types/articleDetailsSchema";
 import { fetchArticleById } from "../services/fetchArticleById";
 import { Article } from "../types/article";
