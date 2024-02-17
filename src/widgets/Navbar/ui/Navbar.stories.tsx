@@ -24,4 +24,4 @@ Dark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Login: Story = {
     args: {},
 };
-Login.decorators = [StoreDecorator({ user: { authData: { id: "1", username: "fsdfsdf" } } })];
+Login.decorators = [StoreDecorator({ user: { authData: { id: "1", username: "fsdfsdf" }, _mounted: true } })];

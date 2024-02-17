@@ -7,7 +7,7 @@ import StoreDecorator from "shared/config/storybook/StoreDecorator/StoreDecorato
 const meta = {
     title: "widget/Sidebar",
     component: Sidebar,
-    decorators: [StoreDecorator({ user: { authData: { id: "1", username: "2fsd" } } })],
+    decorators: [StoreDecorator({ user: { authData: { id: "1", username: "2fsd" }, _mounted: true } })],
     tags: ["autodocs"],
 } satisfies Meta<typeof Sidebar>;
 
