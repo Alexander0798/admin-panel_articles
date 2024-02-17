@@ -5,7 +5,7 @@ import { Text } from "shared/ui/Text/Text";
 import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { getProfileReadonly } from "../../../../entities/Profile/model/selectors/getProfileReadonly";
+import { getProfileReadonly } from "../../../../entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { profileActions, updateProfileData } from "../../../../entities/Profile";
 
@@ -28,7 +28,6 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
 
     const onSave = useCallback(() => {
         dispatch(updateProfileData());
-        dispatch(profileActions.setReadonly(true));
     }, [dispatch]);
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
