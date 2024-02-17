@@ -12,7 +12,12 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     const babelLoader = {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        use: {
+            loader: "babel-loader",
+            options: {
+                plugins: [isDev && require.resolve("react-refresh/babel")].filter(Boolean),
+            },
+        },
     };
     const cssLoader = {
         test: /\.s[ac]ss$/i,
