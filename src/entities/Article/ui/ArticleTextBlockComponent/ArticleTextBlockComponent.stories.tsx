@@ -3,6 +3,7 @@ import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorato
 import { Theme } from "app/providers/ThemeProvider";
 import StoreDecorator from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import { ArticleTextBlockComponent } from "./ArticleTextBlockComponent";
+import { ArticleBlockType } from "../../model/types/article";
 
 const meta = {
     title: "entities/ArticleTextBlockComponent",
@@ -15,9 +16,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {},
+    args: {
+        block: {
+            id: "1",
+            type: ArticleBlockType.TEXT,
+            paragraphs: ["adfasd", "asdfasdf"],
+            title: "dassa",
+        },
+    },
 };
 export const Dark: Story = {
-    args: {},
+    args: {
+        block: {
+            id: "1",
+            type: ArticleBlockType.TEXT,
+            paragraphs: ["adfasd", "asdfasdf"],
+            title: "dassa",
+        },
+    },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

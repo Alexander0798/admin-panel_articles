@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 import { Theme } from "app/providers/ThemeProvider";
-import { Align, Text, ThemeText } from "./Text";
+import { Align, Text, TextSize, ThemeText } from "./Text";
 
 const meta = {
     title: "shared/Text",
@@ -46,6 +46,13 @@ export const Center: Story = {
         title: "Lorem",
         text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem perspiciatis",
         align: Align.CENTER,
+    },
+};
+export const SizeL: Story = {
+    args: {
+        title: "Lorem",
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem perspiciatis",
+        size: TextSize.L,
     },
 };
 export const OnlyTitle: Story = {

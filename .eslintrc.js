@@ -17,7 +17,7 @@ module.exports = {
     },
     plugins: ["@typescript-eslint", "react", "i18next", "react-hooks"],
     rules: {
-        indent: [2, 4],
+        indent: [2, 4, {"SwitchCase": 1}],
         quotes: ["error", "double"],
         semi: ["error", "always"],
         "react/jsx-indent": [2, 4],
