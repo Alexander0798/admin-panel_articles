@@ -14,11 +14,11 @@ const data = {
 };
 describe("profileSlice.test", () => {
     test("test set readonly", () => {
-        const state: Partial<ProfileSchema> = { readonly: true };
+        const state: DeepPartial<ProfileSchema> = { readonly: true };
         expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(false))).toEqual({ readonly: false });
     });
     test("test cancel edit", () => {
-        const state: Partial<ProfileSchema> = { data, form: { username: "" } };
+        const state: DeepPartial<ProfileSchema> = { data, form: { username: "" } };
         expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit())).toEqual({
             readonly: true,
             validateErrors: undefined,
@@ -27,20 +27,20 @@ describe("profileSlice.test", () => {
         });
     });
     test("test update profile", () => {
-        const state: Partial<ProfileSchema> = { form: { username: "321" } };
+        const state: DeepPartial<ProfileSchema> = { form: { username: "321" } };
         expect(profileReducer(state as ProfileSchema, profileActions.updateProfile({ username: "123" }))).toEqual({
             form: { username: "123" },
         });
     });
     test("test update profile service pending", () => {
-        const state: Partial<ProfileSchema> = { isLoading: false, validateErrors: [ValidateProfileError.SERVER_ERROR] };
+        const state: DeepPartial<ProfileSchema> = { isLoading: false, validateErrors: [ValidateProfileError.SERVER_ERROR] };
         expect(profileReducer(state as ProfileSchema, updateProfileData.pending)).toEqual({
             isLoading: true,
             validateErrors: undefined,
         });
     });
     test("test update profile service fulfilled", () => {
-        const state: Partial<ProfileSchema> = { isLoading: true };
+        const state: DeepPartial<ProfileSchema> = { isLoading: true };
         expect(profileReducer(state as ProfileSchema, updateProfileData.fulfilled(data, ""))).toEqual({
             isLoading: false,
             validateErrors: undefined,

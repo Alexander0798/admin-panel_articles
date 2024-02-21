@@ -6,7 +6,7 @@ import { Button, ThemeButton } from "shared/ui/Button/Button";
 import { Portal } from "shared/ui/Portal/Portal";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getUserAuthData, userActions } from "../../../entities/User";
+import { getUserAuthData, userActions } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
 
 interface Props {

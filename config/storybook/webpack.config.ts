@@ -10,7 +10,7 @@ export default ({ config }: { config: Configuration }) => {
         src: path.resolve(__dirname, "..", "..", "src"),
     };
 
-    config.resolve!.modules!.push(paths.src);
+    config.resolve!.modules!.unshift(paths.src);
 
     // @ts-ignore
     config.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
@@ -31,5 +31,6 @@ export default ({ config }: { config: Configuration }) => {
             __PROJECT__: JSON.stringify("storybook"),
         })
     );
+    console.log(config);
     return config;
 };

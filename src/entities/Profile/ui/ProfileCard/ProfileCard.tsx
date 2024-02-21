@@ -4,11 +4,11 @@ import { Mods, classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Align, Text, ThemeText } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
-import { Profile } from "entities/Profile/model/types/Profile";
+import { Profile } from "../../model/types/Profile";
 import { Loader } from "shared/ui/Loader/Loader";
 import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Currency, CurrencySelect } from "../../../../entities/Currency";
-import { Country, CountrySelect } from "../../../../entities/Country";
+import { Currency, CurrencySelect } from "entities/Currency";
+import { Country, CountrySelect } from "entities/Country";
 
 interface Props {
     className?: string;

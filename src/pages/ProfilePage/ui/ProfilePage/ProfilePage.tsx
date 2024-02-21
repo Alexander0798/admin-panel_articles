@@ -9,19 +9,19 @@ import {
     getProfileValidateErrors,
     profileActions,
     profileReducer,
-} from "../../../../entities/Profile";
+} from "entities/Profile";
 import { DynamicModuleLoader } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { ProfilePageHeader } from "../ProfilePageHeader/ProfilePageHeader";
-import { getProfileReadonly } from "../../../../entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly";
-import { getProfileForm } from "../../../../entities/Profile/model/selectors/getProfileForm/getProfileForm";
+import { getProfileReadonly } from "entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly";
+import { getProfileForm } from "entities/Profile/model/selectors/getProfileForm/getProfileForm";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import { ThemeText } from "shared/ui/Text/Text";
 import { Text } from "shared/ui/Text/Text";
-import { ValidateProfileError } from "../../../../entities/Profile/model/types/Profile";
+import { ValidateProfileError } from "entities/Profile/model/types/Profile";
 import { useTranslation } from "react-i18next";
 const reducers = {
     profile: profileReducer,

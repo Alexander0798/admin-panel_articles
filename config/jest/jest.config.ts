@@ -10,8 +10,6 @@ const config: Config = {
     clearMocks: true,
     // coverageProvider: "v8",
     testEnvironment: "jsdom",
-    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-    moduleDirectories: ["node_modules"],
     rootDir: "../../",
     roots: ["<rootDir>"],
     testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
@@ -21,6 +19,9 @@ const config: Config = {
         "\\.s?css$": "identity-obj-proxy",
         "\\.svg": ["<rootDir>config/jest/jestEmptyComponent.tsx"],
     },
+    coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+
+    moduleDirectories: ["node_modules"],
     globals: {
         __IS_DEV__: true,
         __API__: "",
@@ -97,8 +98,7 @@ const config: Config = {
     // moduleNameMapper: {},
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-    // modulePathIgnorePatterns: [],
-
+   
     // Activates notifications for test results
     // notify: false,
 
@@ -156,9 +156,7 @@ const config: Config = {
     // The glob patterns Jest uses to detect test files
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-    // testPathIgnorePatterns: [
-    //   "\\\\node_modules\\\\"
-    // ],
+    // testPathIgnorePatterns: ["\\\\node_modules\\\\"],
 
     // The regexp pattern or array of patterns that Jest uses to detect test files
     // testRegex: [],
@@ -173,10 +171,7 @@ const config: Config = {
     // transform: undefined,
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // transformIgnorePatterns: [
-    //   "\\\\node_modules\\\\",
-    //   "\\.pnp\\.[^\\\\]+$"
-    // ],
+    // transformIgnorePatterns: ["\\\\node_modules\\\\", "\\.pnp\\.[^\\\\]+$"],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,
@@ -185,7 +180,7 @@ const config: Config = {
     // verbose: undefined,
 
     // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-    // watchPathIgnorePatterns: [],
+    // watchPathIgnorePatterns: ["\\\\node_modules\\\\"],
 
     // Whether to use watchman for file crawling
     // watchman: true,
