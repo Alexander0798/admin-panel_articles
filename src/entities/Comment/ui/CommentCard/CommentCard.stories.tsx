@@ -3,11 +3,12 @@ import ThemeDecorator from "shared/config/storybook/ThemeDecorator/ThemeDecorato
 import { Theme } from "app/providers/ThemeProvider";
 import StoreDecorator from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import { CommentCard } from "./CommentCard";
+import Avatar from "shared/assets/test/avatar.jpg";
 const meta = {
     title: "entities/CommentCard",
     component: CommentCard,
     args: {
-        comment: { id: "1", text: "comment ", user: { id: "1", username: "admin" } },
+        comment: { id: "1", text: "comment ", user: { id: "1", username: "admin", avatar: Avatar } },
     },
     decorators: [StoreDecorator({})],
     tags: ["autodocs"],
@@ -16,10 +17,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-    args: {},
-};
-export const Dark: Story = {
-    args: {},
-};
+export const Light: Story = {};
+export const Dark: Story = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Loading: Story = {
+    args: { isLoading: true },
+};

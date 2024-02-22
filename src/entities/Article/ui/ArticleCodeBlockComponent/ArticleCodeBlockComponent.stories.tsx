@@ -12,7 +12,20 @@ const meta = {
         block: {
             id: "1",
             type: ArticleBlockType.CODE,
-            code: "var i = 0"
+            code: `const meta = {
+                title: "entities/ArticleCodeBlockComponent",
+                component: ArticleCodeBlockComponent,
+                args: {
+                    block: {
+                        id: "1",
+                        type: ArticleBlockType.CODE,
+                        code: "var i = 0"
+                    },
+                },
+                decorators: [StoreDecorator({})],
+                tags: ["autodocs"],
+            } satisfies Meta<typeof ArticleCodeBlockComponent>;
+            `,
         },
     },
     decorators: [StoreDecorator({})],

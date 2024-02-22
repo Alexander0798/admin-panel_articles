@@ -31,6 +31,5 @@ export default ({ config }: { config: Configuration }) => {
             __PROJECT__: JSON.stringify("storybook"),
         })
     );
-    console.log(config);
     return config;
 };

@@ -7,6 +7,7 @@ import { rtkApi } from "shared/api/rtkApi";
 import { ProfileSchema } from "entities/Profile";
 import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import { addCommentForm } from "features/addCommentForm";
 export interface StateSchema {
     user: UserSchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
@@ -16,6 +17,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
+    addCommentForm?: addCommentForm;
 }
 
 export type StateSchemaKey = keyof StateSchema;

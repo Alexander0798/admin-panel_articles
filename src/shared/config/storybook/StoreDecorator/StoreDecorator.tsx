@@ -5,11 +5,14 @@ import { profileReducer } from "../../../../entities/Profile";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { articleDetailsReducer } from "../../../../entities/Article/model/slice/ArticleDetailsSlice";
+import { addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice";
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
+    addCommentForm: addCommentFormReducer,
+    articleDetailsComments: articleDetailsReducer,
 };
 const StoreDecorator = (state: Partial<StateSchema>, asyncReducers?: ReducersList) => {
     const story = (Story: Story) => (

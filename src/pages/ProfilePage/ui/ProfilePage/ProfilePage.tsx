@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect } from "react";
+import { FC, memo, useCallback } from "react";
 import cls from "./ProfilePage.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -23,6 +23,8 @@ import { ThemeText } from "shared/ui/Text/Text";
 import { Text } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entities/Profile/model/types/Profile";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 const reducers = {
     profile: profileReducer,
 };
@@ -38,6 +40,7 @@ const ProfilePage: FC<Props> = ({ className }: Props) => {
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t("При сохранении возникла ошибка сервера"),
@@ -46,11 +49,11 @@ const ProfilePage: FC<Props> = ({ className }: Props) => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t("Не корректный регион"),
         [ValidateProfileError.INCORRECT_AGE]: t("Некорректный возраст"),
     };
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstName = useCallback(
         (value?: string) => {

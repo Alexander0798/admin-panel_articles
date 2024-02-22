@@ -4,7 +4,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import StoreDecorator from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import { ArticleImageBlockComponent } from "./ArticleImageBlockComponent";
 import { ArticleBlockType } from "../../model/types/article";
-
+import Image from "shared/assets/test/avatar.jpg";
 const meta = {
     title: "entities/ArticleImageBlockComponent",
     component: ArticleImageBlockComponent,
@@ -12,8 +12,8 @@ const meta = {
         block: {
             id: "1",
             type: ArticleBlockType.IMAGE,
-            src: "asdfa",
-            title: "aaf",
+            src: Image,
+            title: "test image",
         },
     },
     decorators: [StoreDecorator({})],

@@ -9,30 +9,20 @@ const meta = {
     title: "entities/ArticleTextBlockComponent",
     component: ArticleTextBlockComponent,
     decorators: [StoreDecorator({})],
+    args: {
+        block: {
+            id: "1",
+            type: ArticleBlockType.TEXT,
+            paragraphs: ["lorem lorem lorem lorem lorem lorem", "lorem lorem lorem lorem lorem lorem"],
+            title: "Title",
+        },
+    },
     tags: ["autodocs"],
 } satisfies Meta<typeof ArticleTextBlockComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-    args: {
-        block: {
-            id: "1",
-            type: ArticleBlockType.TEXT,
-            paragraphs: ["adfasd", "asdfasdf"],
-            title: "dassa",
-        },
-    },
-};
-export const Dark: Story = {
-    args: {
-        block: {
-            id: "1",
-            type: ArticleBlockType.TEXT,
-            paragraphs: ["adfasd", "asdfasdf"],
-            title: "dassa",
-        },
-    },
-};
+export const Light: Story = {};
+export const Dark: Story = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

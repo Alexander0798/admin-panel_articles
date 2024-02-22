@@ -15,6 +15,16 @@ interface Props {
 export const Component: FC<Props> = (props) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation("article-details");
+
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className])}>
+                <CommentCard isLoading={true} />
+                <CommentCard isLoading={true} />
+                <CommentCard isLoading={true} />
+            </div>
+        );
+    }
     return (
         <div className={classNames(cls.CommentList, {}, [className])}>
             {comments ? (
