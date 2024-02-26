@@ -4,8 +4,9 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { Button, ButtonSize, ThemeButton } from "shared/ui/Button/Button";
 import { classNames } from "shared/lib/classNames/classNames";
-import { SidebarItemsList } from "widgets/Sidebar/model/items";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
+import { useSelector } from "react-redux";
+import { getSidebarItems } from "widgets/Sidebar/model/selectors/getSidebarItems";
 
 interface Props {
     className?: string;
@@ -13,10 +14,15 @@ interface Props {
 
 const SidebarComponent: FC<Props> = ({ className }: Props) => {
     const [collapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(getSidebarItems);
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-    const itemsList = useMemo(() => SidebarItemsList.map((item) => <SidebarItem item={item} key={item.path} collapsed={collapsed} />), [collapsed]);
+
+    const itemsList = useMemo(
+        () => sidebarItemsList.map((item) => <SidebarItem item={item} key={item.path} collapsed={collapsed} />),
+        [collapsed, sidebarItemsList]
+    );
     return (
         <div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
             <Button
