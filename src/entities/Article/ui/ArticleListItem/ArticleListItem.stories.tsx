@@ -22,10 +22,10 @@ export const DarkList: Story = {
     args: { view: ArticleView.LIST },
 };
 export const LightPlate: Story = {
-    args: { view: ArticleView.PLATE },
+    args: { view: ArticleView.TILED },
 };
 export const DarkPlate: Story = {
-    args: { view: ArticleView.PLATE },
+    args: { view: ArticleView.TILED },
 };
 DarkList.decorators = [ThemeDecorator(Theme.DARK)];
 DarkPlate.decorators = [ThemeDecorator(Theme.DARK)];

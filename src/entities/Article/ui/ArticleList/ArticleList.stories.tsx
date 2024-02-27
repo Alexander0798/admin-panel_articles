@@ -31,13 +31,13 @@ export const LoadingList: Story = {
     args: { view: ArticleView.LIST, isLoading: true },
 };
 export const LightPlate: Story = {
-    args: { view: ArticleView.PLATE },
+    args: { view: ArticleView.TILED },
 };
 export const DarkPlate: Story = {
-    args: { view: ArticleView.PLATE },
+    args: { view: ArticleView.TILED },
 };
 export const LoadingPlate: Story = {
-    args: { view: ArticleView.PLATE, isLoading: true },
+    args: { view: ArticleView.TILED, isLoading: true },
 };
 DarkList.decorators = [ThemeDecorator(Theme.DARK)];
 DarkPlate.decorators = [ThemeDecorator(Theme.DARK)];

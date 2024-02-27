@@ -33,7 +33,7 @@ export enum ArticleType {
 }
 export enum ArticleView {
     LIST = "list",
-    PLATE = "plate",
+    TILED = "tiled",
 }
 export interface Article {
     id: string;

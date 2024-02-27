@@ -1,3 +1,8 @@
 .ArticlesPage {
-    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.view {
+    align-self: flex-end;
 }

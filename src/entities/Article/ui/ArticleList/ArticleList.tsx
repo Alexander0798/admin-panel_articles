@@ -16,7 +16,7 @@ const Component: FC<Props> = (props) => {
     const { className, articles, isLoading, view = ArticleView.LIST } = props;
     const renderArticles = (article: Article) => <ArticleListItem article={article} view={view} key={article.id} />;
     const getSkeletons = (view: ArticleView) => {
-        return new Array(view === ArticleView.PLATE ? 9 : 3)
+        return new Array(view === ArticleView.TILED ? 9 : 3)
             .fill(0)
             .map((_, index) => <ArticleListItemSkeleton view={view} key={index} />);
     };
