@@ -1,16 +1,14 @@
-import { fetchArticleById } from "../services/fetchArticleById";
-import { Article, ArticleBlockType, ArticleType } from "../types/article";
-import { ArticleDetailsSchema } from "../types/articleDetailsSchema";
-import { articleDetailsReducer } from "./ArticleDetailsSlice";
+import { Article } from "entities/Article";
+import { ArticleBlockType, ArticleType } from "entities/Article/model/types/article";
 
-const data: Article = {
+export const articleStorybook: Article = {
     id: "1",
     title: "Javascript news",
+    subtitle: "Что нового в JS за 2022 год?",
     user: {
         id: "1",
         username: "admin",
     },
-    subtitle: "Что нового в JS за 2022 год?",
     img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
     views: 1022,
     createdAt: "26.02.2022",
@@ -42,21 +40,3 @@ const data: Article = {
         },
     ],
 };
-
-describe("ArticleDetailsSlice.test", () => {
-    test("test fetch article test services panding", () => {
-        const state: DeepPartial<ArticleDetailsSchema> = { isLoading: false, error: "error" };
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
-            isLoading: true,
-            error: undefined,
-        });
-    });
-    test("test featch article test services fulfilled", () => {
-        const state: DeepPartial<ArticleDetailsSchema> = { isLoading: true };
-        expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.fulfilled(data, "", ""))).toEqual({
-            isLoading: false,
-            error: undefined,
-            data: data,
-        });
-    });
-});

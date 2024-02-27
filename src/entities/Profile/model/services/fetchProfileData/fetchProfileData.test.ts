@@ -3,6 +3,7 @@ import { fetchProfileData } from "./fetchProfileData";
 import { Currency } from "../../../../Currency";
 import { Country } from "../../../../Country";
 const data = {
+    id: "1",
     firstName: "Alex",
     lastName: "Profi",
     age: 29,

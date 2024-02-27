@@ -6,7 +6,7 @@ import { ArticleImageBlockComponent } from "./ArticleImageBlockComponent";
 import { ArticleBlockType } from "../../model/types/article";
 import Image from "shared/assets/test/avatar.jpg";
 const meta = {
-    title: "entities/ArticleImageBlockComponent",
+    title: "entities/Article/ArticleImageBlockComponent",
     component: ArticleImageBlockComponent,
     args: {
         block: {

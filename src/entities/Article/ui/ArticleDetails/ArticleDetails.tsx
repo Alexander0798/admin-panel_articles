@@ -18,6 +18,9 @@ import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { Button, ThemeButton } from "shared/ui/Button/Button";
+import { useNavigate } from "react-router-dom";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface Props {
     id: string;
@@ -30,11 +33,13 @@ const reducers: ReducersList = {
 const Component: FC<Props> = (props) => {
     const { id, className } = props;
     const { t } = useTranslation("article-details");
-
+    const navigate = useNavigate();
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const article = useSelector(getArticleDetailsData);
     const error = useSelector(getArticleDetailsError);
-
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
             case ArticleBlockType.CODE:
@@ -91,6 +96,9 @@ const Component: FC<Props> = (props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Button theme={ThemeButton.OUTLINE} className={cls.backBtn} onClick={onBackToList}>
+                {t("Назад к списку")}
+            </Button>
             <div className={classNames(cls.ArticleDetails, {}, [className])}>{content}</div>
         </DynamicModuleLoader>
     );

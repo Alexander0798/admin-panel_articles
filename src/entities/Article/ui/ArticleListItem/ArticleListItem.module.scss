@@ -1,0 +1,126 @@
+.list {
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
+    }
+
+    .views {
+        margin-left: auto;
+    }
+
+    .header,
+    .footer {
+        display: flex;
+        align-items: center;
+        gap: 0 11px;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+
+
+    .date {
+        margin-left: auto;
+    }
+
+    .type p,
+    .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .textBlock {
+        overflow-y: hidden;
+        max-height: 200px;
+    }
+
+    .type {
+        max-width: 300px;
+    }
+
+    .title {
+        max-width: 400px;
+    }
+
+
+}
+
+.plate {
+    margin: 0 auto;
+    max-width: 230px;
+    cursor: pointer;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .date {
+        position: absolute;
+        top: 0;
+        right: 12px;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    &:hover {
+        opacity: .8;
+        transform: translate();
+
+        .date {
+            opacity: 1;
+        }
+    }
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 8px 0;
+    }
+
+    .imageWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+
+
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+    }
+
+    .type {
+        max-width: 120px;
+    }
+
+    .type p,
+    .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .views {
+        margin-left: auto;
+    }
+
+    .title {
+        max-width: 200px;
+    }
+
+}

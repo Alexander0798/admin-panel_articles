@@ -1,7 +1,6 @@
 import { FC, memo } from "react";
 import cls from "./CommentCard.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
 import { Comment } from "../../model/types/comment";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Text } from "shared/ui/Text/Text";
@@ -17,7 +16,6 @@ interface Props {
 
 export const Component: FC<Props> = (props) => {
     const { className, comment, isLoading } = props;
-    const { t } = useTranslation("article-details");
     if (isLoading) {
         return (
             <div className={classNames(cls.CommentCard, {}, [className])}>
